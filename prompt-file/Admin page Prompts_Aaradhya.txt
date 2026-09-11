@@ -1,0 +1,32 @@
+Prompt 1
+
+I have three Admin module test cases that I want to automate:
+
+1. Search for a system user and verify that the user appears in the results.
+2. Enter a username, click Reset, and verify that the filter is cleared.
+3. Open the Add User form, submit it empty, and verify the required-field messages.
+
+I will share the page locators next.
+
+
+
+Prompt 2
+
+Here are the locators:
+
+- Admin page heading: `getByRole('heading', { name: /System Users/i })`
+- Add button: `getByRole('button', { name: 'Add' })`
+- Search button: `getByRole('button', { name: 'Search' })`
+- Reset button: `getByRole('button', { name: 'Reset' })`
+- Username field: `.oxd-input-group` containing `Username`
+- Save button: `getByRole('button', { name: 'Save' })`
+- Required messages: `getByText('Required')`
+
+
+Prompt 3
+
+Now generate the complete automation scripts for these three Admin test cases using the locators I provided.
+
+Please update the feature file, page object, and step-definition file as needed. Follow the existing Playwright, TypeScript, and Cucumber structure in the project. Keep locators and browser actions in `admin.page.ts`, Gherkin steps in `admin.step.ts`, and use the existing hooks and test-data patterns.
+
+After generating the scripts, run the Admin tests and tell me whether they passed or failed.

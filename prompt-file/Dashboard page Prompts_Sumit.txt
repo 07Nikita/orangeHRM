@@ -1,0 +1,30 @@
+I have three Dashboard module test cases that I want to automate:
+
+Verify that the Dashboard widgets, including Quick Launch, are visible, Navigate from Dashboard to the Admin module and verify that the System Users page opens, Navigate from Dashboard to the PIM module and verify that the PIM page opens.
+I will share the page locators next.
+
+Here are the locators for the Dashboard module:
+
+- Dashboard heading: `getByRole('heading', { name: 'Dashboard' })`
+- Side navigation: `getByRole('navigation')`
+- Quick Launch section: `getByText('Quick Launch')`
+- Dashboard widgets: `locator('.oxd-grid-item')`
+- Navigation item: `sideNavigation.getByText(moduleName, { exact: false }).first()`
+
+Now generate the complete automation scripts for these three Dashboard test cases using the locators I provided.
+
+Update the Dashboard feature, page-object, and step-definition files as needed. Use the existing Playwright, TypeScript, and Cucumber structure in the project.
+
+The tests should:
+- Log in before each Dashboard scenario.
+- Verify that the Dashboard widgets are visible.
+- Navigate to Admin and verify the System Users page.
+- Navigate to PIM and verify the PIM page.
+- Use the existing Admin, PIM, login, hooks, and test-data implementations.
+- Keep locators and browser actions in `dashboard.page.ts`.
+- Keep Gherkin step implementations in `dashboard.step.ts`.
+- Reuse existing methods where possible.
+- Do not use fixed waits such as `waitForTimeout`.
+- Do not modify unrelated feature files.
+
+After generating the scripts, run the Dashboard tests and tell me which tests passed or failed.

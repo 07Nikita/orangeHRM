@@ -1,0 +1,115 @@
+Prompts :
+
+1. 
+Generate a TypeScript Cucumber step definitions file for the OrangeHRM PIM module using Playwright and a Page Object Model framework.
+
+Requirements:
+Use Given, When, Then from @cucumber/cucumber.
+Use CustomWorld for typing.
+Read login test data from loginData.json.
+Read employee test data from employeeData.json.
+Include steps for:
+Navigating to the PIM module.
+Validating Add Employee required fields.
+Creating an employee.
+Opening Employee Personal Details.
+Verifying each action succeeds.
+Use async/await throughout.
+Return only the final TypeScript code.
+
+
+2.
+I'm working on automation for the PIM module in our Playwright + Cucumber TypeScript framework and need help creating the step definitions file.
+
+Please set up the necessary imports and use our existing CustomWorld and test data loader utility.
+
+I need a step that logs in with valid credentials from our login test data and navigates to the PIM module.
+
+Then create steps to:
+
+submit the Add Employee form without filling in the required fields,
+verify the required field validation messages are displayed,
+create a new employee using the employee details from our test data file,
+verify the employee was created successfully,
+open the employee's Personal Details page,
+and verify that the Personal Details page is displayed.
+
+Use the existing page object methods for all actions and validations. Employee details should be read from test data rather than hardcoded values.
+
+Follow our framework conventions by using async/await throughout, keeping the step definitions clean, and typing the test data properly.
+
+Return only the completed TypeScript step definitions file without any explanations or comments.3. 
+I'm working on the step definitions for the PIM module in our Playwright + Cucumber framework.
+
+Can you create the step definitions file for me?
+
+We already have a CustomWorld, page objects, and a utility to read test data from JSON files.
+
+I need a step that logs in using valid credentials from test data and navigates to the PIM module.
+
+Then add steps to:
+
+submit the Add Employee form without filling the mandatory fields,
+verify the required field messages are shown,
+create a new employee using data from a test data file,
+verify the employee is created successfully,
+open the employee's Personal Details page,
+and verify that page is displayed.
+
+Please follow the same patterns used across a typical Playwright Page Object Model framework:
+
+use async/await,
+use strong TypeScript typing for test data,
+keep business logic inside page objects,
+and keep the step definitions clean and readable.
+
+Just give me the complete TypeScript step definition file without any explanations.
+
+
+4.
+I'm working on a Playwright + Cucumber automation framework in TypeScript and need step definitions for the PIM module.
+
+Please create a complete step definition file using our existing framework structure.
+
+Requirements:
+
+Use Cucumber's Given, When, and Then syntax.
+Use our CustomWorld so page objects can be accessed through this.
+Load test data through the existing getTestData utility.
+Follow our standard TypeScript conventions and use strong typing when reading test data.
+Use async/await in every step.
+Keep the step definitions clean and delegate all UI interactions to page objects.
+
+The file should include steps for:
+
+Logging in with valid credentials and navigating to the PIM module.
+Submitting the Add Employee form without entering mandatory fields.
+Verifying that required field validation messages are displayed.
+Creating an employee using data from a test data file.
+Verifying that employee creation completed successfully.
+Opening the Employee Personal Details page.
+Verifying that the Personal Details page is displayed.
+
+Please follow the existing framework patterns, use the page objects already available in the custom world, and return only the complete TypeScript step definitions file without any explanations, comments, or additional text.
+
+
+5. 
+I'm working on the step definitions for the OrangeHRM PIM module in our Playwright + Cucumber TypeScript automation framework.
+
+Please create a step definition file that:
+
+Uses our existing CustomWorld setup.
+Loads login credentials from loginData.json.
+Has a precondition step that logs in and navigates to the PIM module.
+Includes a scenario step for submitting the Add Employee form without entering mandatory information.
+Includes a verification step to confirm the required field validation messages are displayed.
+Loads employee details from employeeData.json and uses them to create a new employee.
+Includes a verification step to confirm employee creation completed successfully.
+Includes a step for opening the Employee Personal Details page.
+Includes a verification step to confirm the Personal Details page is displayed.
+Uses async/await throughout.
+Uses strongly typed test data when reading JSON files.
+Keeps all UI interactions within the existing page objects (loginPage, dashboardPage, and pimPage).
+Reuses the framework's common page assertion method for verification steps.
+
+Return only the complete TypeScript step definitions file without any explanations or comments.e.
