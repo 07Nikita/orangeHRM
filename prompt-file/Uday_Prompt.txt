@@ -1,0 +1,154 @@
+Prompt#1
+
+Role:
+You are an experienced QA Automation Engineer with expertise in playwright and automation Testing.
+
+Task:
+Generate a well-structured Gherkin feature file for the given OrangeHRM functionality.
+
+Context:
+The feature file will be used for test automation and collaboration between QA, developers, and business users. The scenarios should reflect real user behavior within OrangeHRM and follow industry-standard BDD practices.
+
+Application:
+OrangeHRM Demo Website
+https://opensource-demo.orangehrmlive.com/
+
+Requirements:
+- Write the feature using proper Gherkin syntax.
+- Create a meaningful Feature name.
+- Add a Background section only when steps are shared across multiple scenarios.
+- Use clear and business-friendly language.
+- Include appropriate tags such as @smoke, @regression, @sanity, @navigation, @login, or other relevant tags.
+- Follow Given, When, Then structure.
+- Keep steps reusable and automation-friendly.
+- Cover happy path scenarios as well as important validation scenarios where applicable.
+- Scenario names should clearly describe the user action and expected outcome.
+- Avoid implementation details and technical jargon.
+
+Output Format:
+Feature:
+
+  Background:
+    Given ...
+
+  @tag
+  Scenario:
+    When ...
+    Then ...
+
+
+Expected Output:
+Generate a complete, realistic, and automation-ready OrangeHRM Gherkin feature file with appropriate tags, background steps, and well-written scenarios following the example style above.
+
+
+
+Prompt #2
+
+Role
+
+You are a QA Automation Engineer.
+
+Task
+
+Convert the provided manual test cases into a clean, readable Gherkin feature file that follows BDD best practices.
+
+Context
+
+The feature file will be used by both testers and automation engineers. It should be easy to understand, business-friendly, and structured in a way that promotes reusable Playwright step definitions.
+
+Application: OrangeHRM
+
+- Create a meaningful Feature name.
+- Add a Background section when the same precondition applies to all scenarios.
+- Convert each test case into a separate scenario.
+- Use the Test Case ID as a tag for traceability.
+- Add relevant tags such as @smoke, @regression, @validation, @navigation, @myinfo, etc.
+- Write scenarios from the user's perspective.
+- Keep steps concise and reusable.
+- Avoid technical implementation details, locators, selectors, or Playwright-specific actions.
+- Use natural business language.
+- Ensure the scenarios are suitable for automation.
+
+Feature Example
+
+@myinfo
+Feature: My Info
+
+  Background:
+    Given user is on the My Info module
+
+  @smoke
+  Scenario: Verify My Info tabs and controls
+    Then My Info tabs and controls should be visible
+
+Test Cases:
+
+S04-T01
+	Test Case ID: S04-T01 Title: Validate Add User required controls Description: Required and mismatched-	password validation without saving. Preconditions: Authenticated Admin; Add User page. Test Data: Empty 	form; mismatched password. Steps: Click Save empty; repeat with mismatch. Expected Results: Validation 	prevents save; no user created. Automation Candidate: Yes
+
+S04-T02
+	Test Case ID: S04-T02 Title: Search an existing system user and open edit Description: Verify row-level 	edit navigation. Preconditions: Authenticated Admin; Admin row exists. Test Data: Admin. Steps: Search 	Admin; click pencil action. Expected Results: Selected user edit form opens with Admin identity. 	Automation Candidate: Yes
+	Output Instructions
+
+Generate a complete feature file only.
+
+-Include appropriate tags.
+-Include a Background section if applicable.
+-Use Playwright-friendly reusable step wording.
+-Preserve Test Case ID tags for traceability.
+-Follow professional BDD standards used in enterprise automation frameworks.
+-Do not use any personalized data 
+-Make sure to make no mistake
+
+
+Prompt #3
+
+Role
+
+You are a Senior QA Automation Engineer working on an enterprise-grade Playwright + TypeScript automation framework using the Page Object Model (POM) design pattern.
+
+Task
+
+Generate a clean, maintainable, and reusable Page Object class for the specified OrangeHRM page.
+
+Context
+
+The framework follows Playwright with TypeScript and uses the Page Object Model to separate page actions and locators from test logic.
+
+The generated code should be production-ready and suitable for a real automation project. Follow Playwright best practices and keep the code readable for both automation engineers and future maintainers.
+
+Application
+
+OrangeHRM Demo
+https://opensource-demo.orangehrmlive.com/
+
+Framework
+
+- Playwright
+- TypeScript
+- Page Object Model (POM)
+
+Key Elements:
+- Username input
+- Password input
+- Login button
+- Validation message
+- Forgot Password link
+
+Required Actions:
+- Open login page
+- Login with credentials
+- Validate login page
+- Validate error messages
+
+Expected Output
+
+Generate a complete Playwright TypeScript Page Object class for the specified OrangeHRM login page.
+
+- Follow the structure shown in the example.
+- Use strongly typed locators.
+- Include reusable actions and assertions.
+- Follow enterprise-level Playwright and POM best practices.
+- Return only the final page object code.
+-Do not use any personalized data 
+
