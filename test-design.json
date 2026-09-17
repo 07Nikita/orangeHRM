@@ -1,0 +1,492 @@
+{
+  "scope": {
+    "website": "https://www.magicbricks.com",
+    "module": "Home Loan + MB Advice",
+    "feature": "Buyer decision-support journey across MB Advice Compare, PropWorth, and Home Loan"
+  },
+  "epics": [
+    {
+      "epicId": "EP-001",
+      "title": "Market Research and Locality Comparison",
+      "objective": "Help a buyer compare candidate localities or projects using MB Advice before deciding where to search or buy.",
+      "requirementIds": ["REQ-005", "REQ-006", "REQ-007", "REQ-008", "REQ-009", "REQ-010", "REQ-011", "REQ-012", "REQ-013", "REQ-014"]
+    },
+    {
+      "epicId": "EP-002",
+      "title": "Property Valuation Decision Support",
+      "objective": "Help a buyer or seller estimate property value and understand the evidence behind the estimate through PropWorth.",
+      "requirementIds": ["REQ-015", "REQ-016", "REQ-017", "REQ-018"]
+    },
+    {
+      "epicId": "EP-003",
+      "title": "Home Loan Affordability and Eligibility",
+      "objective": "Help a buyer review loan amount, bank offers, and eligibility/application paths before continuing toward financing support.",
+      "requirementIds": ["REQ-001", "REQ-002", "REQ-003", "REQ-004"]
+    },
+    {
+      "epicId": "EP-004",
+      "title": "Cross-Module Buyer Decision Journey",
+      "objective": "Validate the complete business journey from market research to valuation to financing readiness.",
+      "requirementIds": ["REQ-019"]
+    }
+  ],
+  "userStories": [
+    {
+      "userStoryId": "US-001",
+      "epicId": "EP-001",
+      "requirementIds": ["REQ-005", "REQ-006", "REQ-012", "REQ-013"],
+      "story": "As a buyer, I want to explore an area and review market guidance so that I can decide whether it is worth deeper comparison.",
+      "acceptanceCriteria": [
+        "MB Advice loads from the accessible advice URL.",
+        "Explore Locality, Rates & Trends, and Tips sections are visible.",
+        "The user can identify market signals and guidance links without login."
+      ]
+    },
+    {
+      "userStoryId": "US-002",
+      "epicId": "EP-001",
+      "requirementIds": ["REQ-007", "REQ-008", "REQ-009", "REQ-010", "REQ-011"],
+      "story": "As a buyer, I want to compare two localities or projects so that I can choose a better-fit property search area.",
+      "acceptanceCriteria": [
+        "The user can choose Localities or Projects comparison mode.",
+        "The user can enter or select two comparison entities.",
+        "A comparison result shows meaningful market and quality signals.",
+        "The user can continue from comparison to relevant property listings."
+      ]
+    },
+    {
+      "userStoryId": "US-003",
+      "epicId": "EP-002",
+      "requirementIds": ["REQ-015", "REQ-016", "REQ-017", "REQ-018"],
+      "story": "As a buyer or seller, I want to estimate a property's market value so that I can make a better pricing or purchase decision.",
+      "acceptanceCriteria": [
+        "PropWorth loads for a city context.",
+        "Project or locality input is available with a Get Estimate action.",
+        "The page explains data sources, accuracy, and valuation limitations."
+      ]
+    },
+    {
+      "userStoryId": "US-004",
+      "epicId": "EP-003",
+      "requirementIds": ["REQ-001", "REQ-002", "REQ-003", "REQ-004"],
+      "story": "As a buyer, I want to review home loan amount, rates, and eligibility support so that I can understand financing feasibility.",
+      "acceptanceCriteria": [
+        "Home Loan page loads with low-rate and bank offer messaging.",
+        "Loan amount context is visible and adjustable.",
+        "Eligibility or application support path is discoverable.",
+        "Low repayment capacity is handled without stale or misleading results."
+      ]
+    },
+    {
+      "userStoryId": "US-005",
+      "epicId": "EP-004",
+      "requirementIds": ["REQ-019"],
+      "story": "As a buyer, I want to connect locality research, property valuation, and financing review so that I can make a complete purchase-readiness decision.",
+      "acceptanceCriteria": [
+        "The user can complete the research, valuation, and financing review using accessible pages.",
+        "Each stage provides visible information that supports the next decision.",
+        "Unavailable features such as Buy vs Rent are not treated as successful flows."
+      ]
+    }
+  ],
+  "testScenarios": [
+    {
+      "testScenarioId": "TS-001",
+      "epicId": "EP-001",
+      "userStoryId": "US-001",
+      "requirementIds": ["REQ-005", "REQ-006", "REQ-012", "REQ-013"],
+      "title": "Explore MB Advice landing content for buyer research",
+      "objective": "Verify that a buyer can access MB Advice and discover locality research, trends, and guidance content.",
+      "coverageType": "Positive E2E"
+    },
+    {
+      "testScenarioId": "TS-002",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementIds": ["REQ-007", "REQ-008", "REQ-009", "REQ-010", "REQ-011"],
+      "title": "Compare localities and continue toward property listings",
+      "objective": "Verify that a buyer can use a popular or entered comparison and act on the comparison results.",
+      "coverageType": "Positive E2E"
+    },
+    {
+      "testScenarioId": "TS-003",
+      "epicId": "EP-003",
+      "userStoryId": "US-004",
+      "requirementIds": ["REQ-001", "REQ-002", "REQ-003", "REQ-004"],
+      "title": "Assess home loan offers and repayment capacity",
+      "objective": "Verify that Home Loan content, loan amount context, and eligibility handling support financing decisions.",
+      "coverageType": "Positive, Negative, Boundary"
+    },
+    {
+      "testScenarioId": "TS-004",
+      "epicId": "EP-002",
+      "userStoryId": "US-003",
+      "requirementIds": ["REQ-015", "REQ-016", "REQ-017", "REQ-018"],
+      "title": "Request property valuation and review data confidence",
+      "objective": "Verify that PropWorth supports project/locality valuation entry and explains how estimates are generated.",
+      "coverageType": "Positive E2E"
+    },
+    {
+      "testScenarioId": "TS-005",
+      "epicId": "EP-002",
+      "userStoryId": "US-003",
+      "requirementIds": ["REQ-016", "REQ-017"],
+      "title": "Handle missing or insufficient valuation input",
+      "objective": "Verify that valuation actions do not proceed silently when the user has not provided a meaningful project or locality.",
+      "coverageType": "Negative"
+    },
+    {
+      "testScenarioId": "TS-006",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementIds": ["REQ-010", "REQ-011", "REQ-012"],
+      "title": "Handle partial or unavailable comparison metrics",
+      "objective": "Verify that comparison pages remain usable when some locality metrics display N/A or are unavailable.",
+      "coverageType": "Boundary"
+    },
+    {
+      "testScenarioId": "TS-007",
+      "epicId": "EP-001",
+      "userStoryId": "US-001",
+      "requirementIds": ["REQ-014"],
+      "title": "Track Buy vs Rent availability limitation",
+      "objective": "Verify that the requested Buy vs Rent feature is treated as unavailable unless a working user path exists.",
+      "coverageType": "Negative Availability"
+    },
+    {
+      "testScenarioId": "TS-008",
+      "epicId": "EP-004",
+      "userStoryId": "US-005",
+      "requirementIds": ["REQ-019"],
+      "title": "Complete buyer decision-support journey across modules",
+      "objective": "Verify that a buyer can research, value, and finance a property decision using the accessible MagicBricks modules.",
+      "coverageType": "End-to-End Business Journey"
+    }
+  ],
+  "testCases": [
+    {
+      "testCaseId": "TC-001",
+      "epicId": "EP-001",
+      "userStoryId": "US-001",
+      "requirementId": ["REQ-005", "REQ-006", "REQ-012", "REQ-013"],
+      "testScenarioId": "TS-001",
+      "title": "Open MB Advice and verify buyer research sections",
+      "objective": "Confirm that MB Advice is accessible and presents the main research sections needed before a purchase decision.",
+      "preconditions": "Tester has internet access and can open MagicBricks without logging in.",
+      "testCondition": "Accessible Advice route is used directly or reached through site navigation.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/advice/.",
+        "Verify the page title or header indicates Property Advice or MB Advice content.",
+        "Verify Explore a Locality is visible with an Enter Locality field and Explore button.",
+        "Verify Compare Localities & Projects section is visible.",
+        "Verify Rates & Trends section shows market signals such as price growth, rental yield, demand, or supply.",
+        "Verify Tips cards such as Buying Tips, Return on investment, or Legal Advice are visible."
+      ],
+      "testData": {
+        "url": "https://www.magicbricks.com/advice/"
+      },
+      "expectedResult": "MB Advice loads successfully and exposes locality exploration, comparison, rates/trends, and buyer guidance sections without requiring login.",
+      "priority": "High",
+      "testType": "Functional / E2E Discovery",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-002",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementId": ["REQ-007", "REQ-008", "REQ-009", "REQ-010"],
+      "testScenarioId": "TS-002",
+      "title": "Open a popular locality comparison and verify decision signals",
+      "objective": "Confirm that a buyer can use a prebuilt comparison to evaluate two localities through market and quality signals.",
+      "preconditions": "MB Advice page is accessible and popular comparison links are visible.",
+      "testCondition": "User selects an available popular locality comparison.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/advice/.",
+        "Locate the Compare Localities & Projects section.",
+        "Open a popular comparison such as Mayur Vihar, New Delhi vs Dwarka, New Delhi.",
+        "Verify the comparison result page displays both locality names.",
+        "Verify locality rating, ranking, review count, and property price-band information are displayed where data is available.",
+        "Verify comparison categories such as Price Trends, Demand & Supply, Annual Rental Yield, Location, or Reviews are available."
+      ],
+      "testData": {
+        "comparison": "Mayur Vihar, New Delhi vs Dwarka, New Delhi",
+        "resultUrl": "https://www.magicbricks.com/advice/compare-Mayur-Vihar-in-New-Delhi-and-Dwarka-in-New-Delhi?from=home"
+      },
+      "expectedResult": "The comparison result page opens and presents side-by-side information that helps the buyer compare the two localities.",
+      "priority": "High",
+      "testType": "Functional / Positive E2E",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-003",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementId": ["REQ-011"],
+      "testScenarioId": "TS-002",
+      "title": "Continue from locality comparison to matching property listings",
+      "objective": "Verify that comparison results support the business journey by letting users continue into filtered property searches.",
+      "preconditions": "A locality comparison result page is open and property category price bands are visible.",
+      "testCondition": "A See All link is available for a property category such as 1 BHK, 2 BHK, or 3 BHK flats.",
+      "testSteps": [
+        "Open the locality comparison result page.",
+        "Find a property category section for either compared locality.",
+        "Click a See All link for an available property category.",
+        "Verify the destination is a MagicBricks property listing/search page.",
+        "Verify the destination reflects the selected locality, city, bedroom category, or budget range in the visible page or URL."
+      ],
+      "testData": {
+        "locality": "Dwarka",
+        "city": "New Delhi",
+        "propertyCategory": "2 BHK Flats"
+      },
+      "expectedResult": "The user moves from comparison insight to a relevant property-listing path without losing locality and category context.",
+      "priority": "High",
+      "testType": "Functional / E2E Navigation",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-004",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementId": ["REQ-007", "REQ-008"],
+      "testScenarioId": "TS-002",
+      "title": "Switch between Localities and Projects comparison modes",
+      "objective": "Confirm that MB Advice supports both comparison modes without confusing the user.",
+      "preconditions": "MB Advice page is loaded.",
+      "testCondition": "Both Localities and Projects radio options are visible in the Compare Localities & Projects section.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/advice/.",
+        "Scroll to Compare Localities & Projects.",
+        "Verify Localities is available as a comparison mode.",
+        "Select Projects comparison mode.",
+        "Verify the comparison inputs remain available and the user can understand that project comparison is selected.",
+        "Switch back to Localities and verify locality comparison remains available."
+      ],
+      "testData": {
+        "modes": ["Localities", "Projects"]
+      },
+      "expectedResult": "The user can switch comparison mode between Localities and Projects, and the comparison entry area remains usable.",
+      "priority": "Medium",
+      "testType": "Functional / Alternate Path",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-005",
+      "epicId": "EP-002",
+      "userStoryId": "US-003",
+      "requirementId": ["REQ-015", "REQ-016", "REQ-018"],
+      "testScenarioId": "TS-004",
+      "title": "Open PropWorth and verify valuation entry and trust signals",
+      "objective": "Confirm that PropWorth supports valuation intent and explains estimate confidence before the user proceeds.",
+      "preconditions": "Tester can open the PropWorth city page without logging in.",
+      "testCondition": "PropWorth Bangalore page is used as the observed city context.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/propworth/bangalore.",
+        "Verify the heading indicates PropWorth in Bangalore.",
+        "Verify the question How much is my property worth? is visible.",
+        "Verify Enter Project/Locality input and Get Estimate action are visible.",
+        "Verify accuracy or data-confidence content is visible, such as PropWorth is about 98% accurate or data-model explanation."
+      ],
+      "testData": {
+        "url": "https://www.magicbricks.com/propworth/bangalore"
+      },
+      "expectedResult": "PropWorth loads with a clear valuation input path and visible trust signals explaining estimate accuracy and data basis.",
+      "priority": "High",
+      "testType": "Functional / Positive E2E",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-006",
+      "epicId": "EP-002",
+      "userStoryId": "US-003",
+      "requirementId": ["REQ-016", "REQ-017"],
+      "testScenarioId": "TS-005",
+      "title": "Attempt PropWorth estimate without project or locality input",
+      "objective": "Verify that PropWorth does not silently proceed when required valuation context is missing.",
+      "preconditions": "PropWorth page is loaded and no project/locality value is entered.",
+      "testCondition": "User triggers the estimate action with blank input.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/propworth/bangalore.",
+        "Leave the Enter Project/Locality input blank.",
+        "Click Get Estimate.",
+        "Observe whether the page blocks progress, highlights the field, shows a validation message, or keeps the user on the same page.",
+        "Verify no misleading valuation result is shown for blank input."
+      ],
+      "testData": {
+        "projectOrLocality": ""
+      },
+      "expectedResult": "The system should prevent or safely handle blank valuation input and should not show a fabricated or stale property estimate.",
+      "priority": "High",
+      "testType": "Negative / Validation",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-07",
+      "epicId": "EP-003",
+      "userStoryId": "US-004",
+      "requirementId": ["REQ-004", "TEMPLATE-RQ-03"],
+      "testScenarioId": "TS-003",
+      "title": "Verify Home Loan Eligibility Calculator handles high existing EMI",
+      "objective": "Preserve the negative test-plan intent: confirm that a very high ongoing EMI reduces eligibility, shows a suitable warning, or is otherwise handled without stale values or crash.",
+      "preconditions": "Home Loan Eligibility Calculator is accessible and a previous eligibility value, if any, can be distinguished from the recalculated result.",
+      "testCondition": "Valid income is entered with a very high ongoing EMI while all other required details remain valid.",
+      "testSteps": [
+        "Open the Home Loan Eligibility Calculator from the Home Loan module.",
+        "Enter valid monthly income.",
+        "Enter a high ongoing EMI amount.",
+        "Keep all other required details valid.",
+        "Click Calculate or the equivalent eligibility action.",
+        "Observe the eligibility amount and any validation or warning message."
+      ],
+      "testData": {
+        "monthlyIncome": "Rs 1,00,000",
+        "ongoingEmi": "Rs 90,000",
+        "otherDetails": "Valid values for all required fields"
+      },
+      "expectedResult": "Eligibility should reduce, show a suitable validation or warning about low repayment capacity, or otherwise handle the high ongoing EMI without crashing. The previous eligibility value must not remain displayed as if it were the new result.",
+      "priority": "High",
+      "testType": "Negative / Boundary / Functional Validation",
+      "automationCandidate": "Yes",
+      "sourceTemplateReference": {
+        "templateFile": "test-plan/template/Magicbricks_Manual-Test-Plan.xlsx",
+        "originalTestCaseId": "TC-07",
+        "originalScenarioId": "TS-03",
+        "originalRequirementId": "RQ-03",
+        "originalTitle": "Eligibility Calculator is accessible.",
+        "originalIntent": "Verify high existing EMI case.",
+        "originalObservedResult": "After entering a high ongoing EMI amount, the eligibility value did not update. The previous eligibility amount continued to be displayed and no validation or warning message was shown.",
+        "originalDefectReference": "DR-01"
+      }
+    },
+    {
+      "testCaseId": "TC-008",
+      "epicId": "EP-003",
+      "userStoryId": "US-004",
+      "requirementId": ["REQ-001", "REQ-002", "REQ-003"],
+      "testScenarioId": "TS-003",
+      "title": "Review Home Loan landing page loan amount and bank offer messaging",
+      "objective": "Confirm that the Home Loan page supports initial financing assessment through amount context and visible offer claims.",
+      "preconditions": "Tester can access the Home Loan page without login.",
+      "testCondition": "Home Loan page is loaded from the direct route or site navigation.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/homeloan/home.",
+        "Verify the page heading or title communicates home loan availability at low rates.",
+        "Verify a loan amount value and slider-style amount control are visible.",
+        "Verify bank offer messaging such as 40+ banks, rate starting information, processing-fee message, or 1:1 support is visible.",
+        "Verify the user can identify an eligibility, apply, or expert-support continuation path."
+      ],
+      "testData": {
+        "url": "https://www.magicbricks.com/homeloan/home",
+        "sampleVisibleAmount": "Rs 60 Lakh"
+      },
+      "expectedResult": "The Home Loan landing page provides enough visible information for a buyer to understand financing options and continue toward eligibility or application support.",
+      "priority": "High",
+      "testType": "Functional / Positive E2E",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-009",
+      "epicId": "EP-001",
+      "userStoryId": "US-002",
+      "requirementId": ["REQ-010", "REQ-012"],
+      "testScenarioId": "TS-006",
+      "title": "Verify comparison page remains useful when a metric is unavailable",
+      "objective": "Confirm that missing comparison metrics do not block the buyer from using other available decision signals.",
+      "preconditions": "A comparison result page is available where one locality may show N/A for one or more metrics.",
+      "testCondition": "User reviews a comparison result with partial data.",
+      "testSteps": [
+        "Open the Mayur Vihar vs Dwarka comparison result page.",
+        "Identify any section where a metric displays N/A or is missing for one locality.",
+        "Verify the page still displays other decision signals such as rating, ranking, review count, price bands, average rate, or trend categories.",
+        "Verify the user can still access onward actions such as See All or detailed ratings where available."
+      ],
+      "testData": {
+        "comparison": "Mayur Vihar vs Dwarka",
+        "partialMetricExample": "N/A"
+      },
+      "expectedResult": "The comparison page remains readable and actionable even when some metrics are unavailable; unavailable data is represented clearly and does not break the journey.",
+      "priority": "Medium",
+      "testType": "Boundary / Resilience",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-010",
+      "epicId": "EP-001",
+      "userStoryId": "US-001",
+      "requirementId": ["REQ-014"],
+      "testScenarioId": "TS-007",
+      "title": "Verify Buy vs Rent is not treated as a confirmed working feature when no accessible path exists",
+      "objective": "Preserve the requirement-analysis limitation and avoid false-positive test coverage for an unavailable feature.",
+      "preconditions": "Tester has the current requirement analysis and access to MagicBricks public pages.",
+      "testCondition": "User attempts to locate Buy vs Rent through MB Advice or direct known route attempts.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/advice/.",
+        "Search visible Advice sections for a Buy vs Rent entry point.",
+        "Attempt the documented direct Buy vs Rent route only if it is part of the test environment's allowed URL list.",
+        "Record whether a working Buy vs Rent page loads or whether an error/unavailable page appears.",
+        "Do not mark Buy vs Rent as passed unless a working user journey is visible."
+      ],
+      "testData": {
+        "adviceUrl": "https://www.magicbricks.com/advice/",
+        "knownUnavailableRoute": "https://www.magicbricks.com/buy-vs-rent"
+      },
+      "expectedResult": "If no working Buy vs Rent page or entry point is available, the feature remains a tracked limitation and is excluded from executable positive E2E automation scope.",
+      "priority": "Medium",
+      "testType": "Negative / Availability",
+      "automationCandidate": "No"
+    },
+    {
+      "testCaseId": "TC-011",
+      "epicId": "EP-002",
+      "userStoryId": "US-003",
+      "requirementId": ["REQ-017", "REQ-018"],
+      "testScenarioId": "TS-004",
+      "title": "Verify PropWorth transaction-price and valuation rationale content",
+      "objective": "Confirm that PropWorth provides explanatory content that supports trust in valuation decisions.",
+      "preconditions": "PropWorth Bangalore page is loaded.",
+      "testCondition": "User reviews secondary valuation information rather than entering personal data.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/propworth/bangalore.",
+        "Locate the Check property transaction prices in any Project section.",
+        "Verify the page states the transaction information is based on government registry records.",
+        "Review the PropWorth accuracy or explanation area.",
+        "Verify data ecosystem, data modeling, ML-driven accuracy, or coverage claims are visible."
+      ],
+      "testData": {
+        "url": "https://www.magicbricks.com/propworth/bangalore"
+      },
+      "expectedResult": "The user can understand that PropWorth valuation is presented as data-backed and model-supported rather than as an unsupported estimate.",
+      "priority": "Medium",
+      "testType": "Functional / Content Validation",
+      "automationCandidate": "Yes"
+    },
+    {
+      "testCaseId": "TC-012",
+      "epicId": "EP-004",
+      "userStoryId": "US-005",
+      "requirementId": ["REQ-019"],
+      "testScenarioId": "TS-008",
+      "title": "Complete buyer decision-support journey from comparison to valuation to financing review",
+      "objective": "Validate the most meaningful business outcome across the selected modules: a buyer can research, value, and finance a property decision using accessible MagicBricks pages.",
+      "preconditions": "MagicBricks public pages for MB Advice, PropWorth, and Home Loan are accessible. No login or lead submission is required.",
+      "testCondition": "User performs the complete decision-support journey using observable content and avoids unavailable Buy vs Rent or lead-submission flows.",
+      "testSteps": [
+        "Open https://www.magicbricks.com/advice/.",
+        "Use a popular comparison such as Mayur Vihar vs Dwarka and review ratings, rankings, price bands, and market indicators.",
+        "Confirm onward property category links are available from the comparison result.",
+        "Open https://www.magicbricks.com/propworth/bangalore and verify property valuation input and confidence messaging.",
+        "Open https://www.magicbricks.com/homeloan/home and verify loan amount context, bank offer messaging, and eligibility/application path.",
+        "Confirm the combined journey gives the user market comparison, property value context, and financing readiness information."
+      ],
+      "testData": {
+        "comparison": "Mayur Vihar, New Delhi vs Dwarka, New Delhi",
+        "propWorthCity": "Bangalore",
+        "homeLoanUrl": "https://www.magicbricks.com/homeloan/home"
+      },
+      "expectedResult": "The buyer can complete a coherent purchase-readiness journey across MB Advice comparison, PropWorth valuation, and Home Loan financing review without relying on unavailable features or personal lead submission.",
+      "priority": "High",
+      "testType": "End-to-End / Business Journey",
+      "automationCandidate": "Yes"
+    }
+  ]
+}
